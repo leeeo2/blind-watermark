@@ -1,0 +1,1 @@
+An implementation similar to a blind watermark
