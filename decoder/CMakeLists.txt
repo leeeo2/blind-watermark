@@ -5,9 +5,14 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(OpenCV_DIR C:/opencv4/opencv-mingw/build)
+if (WIN32)
+    set(OpenCV_DIR C:/opencv4/opencv-mingw/build)
+    find_package(OpenCV REQUIRED)
+else()
+    find_package(opencv REQUIRED)
+endif()
+    
 
-find_package(OpenCV REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
